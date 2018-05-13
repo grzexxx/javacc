@@ -39,7 +39,9 @@ public class ParticipantService {
 	}
 
 	public void update(Participant participant) {
-		// TODO Auto-generated method stub
+		Transaction transaction = connector.getSession().beginTransaction();
+		connector.getSession().update(participant);
+		transaction.commit();
 		
 	}
 
